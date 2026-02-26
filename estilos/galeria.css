@@ -1,0 +1,237 @@
+/* ══════════════════════════════════════════
+   GALERÍA — El Sistema Solar
+   ══════════════════════════════════════════ */
+
+/* ── INTRO ── */
+#intro-galeria {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  gap: 2vh;
+}
+
+#intro-galeria h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #cacaca 60%, #7c7c7c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 1.2s ease 0.2s both;
+}
+
+#intro-galeria p {
+  font-size: clamp(0.55rem, 1vw, 0.85rem);
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: rgba(150, 190, 255, 0.5);
+  animation: fadeUp 1.2s ease 0.5s both;
+}
+
+#intro-galeria .linea {
+  width: min(30vw, 220px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(150, 200, 255, 0.5), transparent);
+  animation: fadeUp 1.2s ease 0.35s both;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  padding: 4vh 3vw 2vh;
+}
+
+.section-label span {
+  font-size: 0.6vw;
+  letter-spacing: 0.6em;
+  color: rgba(100, 160, 255, 0.5);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(100, 170, 255, 0.2), transparent);
+}
+
+/* ══════════════════════════════════════════
+   GRID PRINCIPAL
+   - 8 columnas
+   - row-height = (100vw - 6vw padding - gaps) / 8
+     → usamos aspect-ratio para los cuadrados
+   ══════════════════════════════════════════ */
+#galeria-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3px;
+  padding: 0 3vw 6vh;
+}
+
+/* ── ITEM BASE ── */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  animation: fadeUp 0.6s ease both;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.5s ease;
+  filter: brightness(0.8) saturate(0.9);
+}
+
+.grid-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1) saturate(1.1);
+}
+
+/* ── OVERLAY ── */
+.grid-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2vh 1.5vw;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-tag {
+  font-size: 0.55vw;
+  letter-spacing: 0.4em;
+  color: rgba(120, 180, 255, 0.8);
+  text-transform: uppercase;
+  margin-bottom: 0.4vh;
+}
+
+.overlay-title {
+  font-size: 0.9vw;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
+}
+
+/* Borde sutil en hover */
+.grid-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.grid-item:hover::before {
+  border-color: rgba(100, 170, 255, 0.3);
+}
+
+/* ══════════════════════════════════════════
+   CUADRADOS — planetas y lunas
+   aspect-ratio: 1 / 1 → cada celda se
+   autoajusta en altura para ser cuadrada.
+   Ocupan 2 cols × auto height
+   ══════════════════════════════════════════ */
+.cuadrado {
+  grid-column: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+/* ══════════════════════════════════════════
+   RECTANGULARES — nebulosas, galaxias,
+   cometas, sistema solar, punto azul…
+   Varios formatos según protagonismo
+   ══════════════════════════════════════════ */
+
+/* Ancho completo (8 cols), altura panorámica */
+.rect-wide {
+  grid-column: span 8;
+  aspect-ratio: 16 / 5;
+}
+
+/* Mitad del ancho (4 cols), 16:9 */
+.rect-half {
+  grid-column: span 4;
+  aspect-ratio: 16 / 9;
+}
+
+/* Un tercio (3 cols aprox → usamos span 3), 4:3 */
+.rect-third {
+  grid-column: span 3;
+  aspect-ratio: 4 / 3;
+}
+
+/* Span 2, más vertical para llenar huecos */
+.rect-tall {
+  grid-column: span 2;
+  aspect-ratio: 2 / 3;
+}
+
+/* ── ANIMACIONES ESCALONADAS ── */
+.grid-item:nth-child(1)  { animation-delay: 0.05s; }
+.grid-item:nth-child(2)  { animation-delay: 0.10s; }
+.grid-item:nth-child(3)  { animation-delay: 0.15s; }
+.grid-item:nth-child(4)  { animation-delay: 0.20s; }
+.grid-item:nth-child(5)  { animation-delay: 0.25s; }
+.grid-item:nth-child(6)  { animation-delay: 0.30s; }
+.grid-item:nth-child(7)  { animation-delay: 0.35s; }
+.grid-item:nth-child(8)  { animation-delay: 0.40s; }
+.grid-item:nth-child(9)  { animation-delay: 0.45s; }
+.grid-item:nth-child(10) { animation-delay: 0.50s; }
+.grid-item:nth-child(11) { animation-delay: 0.55s; }
+.grid-item:nth-child(12) { animation-delay: 0.60s; }
+.grid-item:nth-child(13) { animation-delay: 0.65s; }
+.grid-item:nth-child(14) { animation-delay: 0.70s; }
+.grid-item:nth-child(15) { animation-delay: 0.75s; }
+.grid-item:nth-child(16) { animation-delay: 0.80s; }
+.grid-item:nth-child(17) { animation-delay: 0.85s; }
+.grid-item:nth-child(18) { animation-delay: 0.90s; }
+.grid-item:nth-child(19) { animation-delay: 0.95s; }
+.grid-item:nth-child(20) { animation-delay: 1.00s; }
+.grid-item:nth-child(21) { animation-delay: 1.05s; }
+.grid-item:nth-child(22) { animation-delay: 1.10s; }
+.grid-item:nth-child(23) { animation-delay: 1.15s; }
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
