@@ -1,0 +1,91 @@
+#intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  gap: 2vh;
+}
+
+#intro h1 {
+  font-size: clamp(2rem, 6vw, 6rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #cacaca 60%, #7c7c7c 100%);
+  text-shadow: #eeeeed 1px 0 4px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 1.2s ease 0.2s both;
+}
+
+#intro p {
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(180, 210, 255, 0.55);
+  animation: fadeUp 1.2s ease 0.6s both;
+}
+
+#intro .scroll-hint {
+  position: absolute;
+  bottom: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+  animation: fadeUp 1.2s ease 1s both;
+}
+
+#intro .scroll-hint span {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+}
+
+#intro .arrow {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(150, 200, 255, 0.6), transparent);
+  animation: arrowPulse 1.8s ease-in-out infinite;
+}
+
+#intro .linea {
+  width: min(40vw, 300px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(150, 200, 255, 0.5),
+    transparent
+  );
+  animation: fadeUp 1.2s ease 0.4s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowPulse {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.4) translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1) translateY(10px);
+  }
+}

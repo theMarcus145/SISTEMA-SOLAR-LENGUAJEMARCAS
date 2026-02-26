@@ -1,76 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SCRIPT PARA CONTROLAR EL SCROLL, MADA MÁS-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PROYECTO FINAL</title>
-    <link rel="stylesheet" href="./estilos/estilos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="./estilos/estilos.css" />
+    <link rel="stylesheet" href="./estilos/intro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="./scripts/scripts.js"></script>
+  </head>
+  <body>
+    <!-- INTRO -->
+    <section id="intro">
+      <h1>El Sistema Solar</h1>
+      <div class="linea"></div>
+      <p>Proyecto por Marco Gil Valero</p>
+    </section>
 
-    <header>
-        <h1>EL SISTEMA SOLAR</h1>
-        <h2>PROYECTO POR MARCO GIL VALERO</h2>
-    </header>
+    <nav id="navegacion">
+      <ul id="menu">
+        <li><button>BOTON 1</button></li>
+        <li><button>BOTON 2</button></li>
+        <li><button>BOTON 3</button></li>
+        <li><button>BOTON 4</button></li>
+      </ul>
+    </nav>
 
+    <!-- MERCURIO -->
     <main>
-        <section class="planeta-derecha">
+      <section class="planeta-derecha">
+        <div class="imagen">
+          <img src="./imagenes/mercurio.jpg" alt="mercurio" id="mercurio" />
+        </div>
+        <div class="contenido">
+          <h3>MERCURIO</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="imagen">
-                <img src="./imagenes/mercurio.jpg" alt="mercurio" id="mercurio">
-            </div>
+      <!-- VENUS -->
+      <section class="planeta-derecha">
+        <div class="contenido">
+          <h3>VENUS</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+        <div class="imagen">
+          <img src="./imagenes/venus.jpg" alt="venus" id="venus" />
+        </div>
+      </section>
 
-            <div class="contenido">
-                <h3>MERCURIO</h3>
-                <ul>
-                    <li>Diámetro: 12.742 km</li>
-                    <li>Distancia al Sol: 149.6 millones de km</li>
-                    <li>Período orbital: 365.25 días</li>
-                    <li>Temperatura media: 15 °C</li>
-                    <li>Satélites naturales: 1 (La Luna)</li>
-                </ul>
-            </div>
+      <!-- TIERRA -->
+      <section class="planeta-derecha">
+        <div class="imagen">
+          <img src="./imagenes/tierra.jpg" alt="La Tierra" id="tierra" />
+        </div>
+        <div class="contenido">
+          <h3>LA TIERRA</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+      </section>
 
-        </section>  
-        <section class="planeta-derecha">
+      <!-- MARTE -->
+      <section class="planeta-derecha">
+        <div class="contenido">
+          <h3>MARTE</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+        <div class="imagen">
+          <img src="./imagenes/marte.jpg" alt="marte" id="marte" />
+        </div>
+      </section>
 
-            <div class="contenido">
-                <h3>VENUS</h3>
-                <ul>
-                    <li>Diámetro: 12.742 km</li>
-                    <li>Distancia al Sol: 149.6 millones de km</li>
-                    <li>Período orbital: 365.25 días</li>
-                    <li>Temperatura media: 15 °C</li>
-                    <li>Satélites naturales: 1 (La Luna)</li>
-                </ul>
-            </div>
-            <div class="imagen">
-                <img src="./imagenes/venus.jpg" alt="venus" id="venus">
-            </div>
-
-        </section>    
-        <section class="planeta-derecha">
-
-            <div class="imagen">
-                <img src="./imagenes/tierra.jpg" alt="La Tierra" id="tierra">
-            </div>
-
-            <div class="contenido">
-                <h3>LA TIERRA</h3>
-                <ul>
-                    <li>Diámetro: 12.742 km</li>
-                    <li>Distancia al Sol: 149.6 millones de km</li>
-                    <li>Período orbital: 365.25 días</li>
-                    <li>Temperatura media: 15 °C</li>
-                    <li>Satélites naturales: 1 (La Luna)</li>
-                </ul>
-            </div>
-
-        </section>
+      <!-- JUPITER -->
+      <section class="planeta-derecha">
+        <div class="imagen">
+          <img src="./imagenes/jupiter.jpg" alt="jupiter" id="jupiter" />
+        </div>
+        <div class="contenido">
+          <h3>JUPITER</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+      </section>
+      <!-- SATURNO -->
+      <section class="planeta-derecha">
+        <div class="contenido">
+          <h3>SATURNO</h3>
+          <ul>
+            <li>Diámetro: 12.742 km</li>
+            <li>Distancia al Sol: 149.6 millones de km</li>
+            <li>Período orbital: 365.25 días</li>
+            <li>Temperatura media: 15 °C</li>
+            <li>Satélites naturales: 1 (La Luna)</li>
+          </ul>
+        </div>
+        <div class="imagen">
+          <img src="./imagenes/saturn.png" alt="saturno" id="saturn" />
+        </div>
+      </section>
     </main>
-
-</body>
+  </body>
 </html>
