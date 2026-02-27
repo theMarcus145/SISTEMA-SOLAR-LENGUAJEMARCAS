@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <!-- SCRIPT PARA CONTROLAR EL SCROLL, MADA MÁS-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROYECTO FINAL</title>
+    <title>EL SOL — El Sistema Solar</title>
     <link rel="stylesheet" href="./estilos/estilos.css" />
     <link rel="stylesheet" href="./estilos/intro.css" />
+    <link rel="stylesheet" href="./estilos/sol.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,8 +44,88 @@
 
     <!-- CONTENIDO -->
     <main>
-      <canvas id="displayContent"> </canvas>
+      <canvas id="displayContent"></canvas>
       <script type="module" src="./scripts/main.js"></script>
+
+      <!-- TÍTULO -->
+      <div class="sol-title-overlay">
+        <h1>El Sol</h1>
+        <div class="linea-sol"></div>
+      </div>
+
+      <!-- OVERLAY PANELS -->
+      <div class="sol-overlay">
+        <!-- TOP-LEFT: Diámetro -->
+        <div class="sol-panel panel-tl">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Diámetro</div>
+          <div class="sol-panel-value">1.392.700 km</div>
+          <div class="sol-panel-sub">109× el diámetro terrestre</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-label">Tipo</div>
+          <div class="sol-panel-value">Enana amarilla</div>
+          <div class="sol-panel-sub">Clase G2V</div>
+        </div>
+
+        <!-- TOP-RIGHT: Temperatura -->
+        <div class="sol-panel panel-tr">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Temperatura superficial</div>
+          <div class="sol-panel-value">5.500 °C</div>
+          <div class="sol-panel-sub">Fotosfera</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-label">Temperatura del núcleo</div>
+          <div class="sol-panel-value">15.000.000 °C</div>
+          <div class="sol-panel-sub">Fusión nuclear de hidrógeno</div>
+        </div>
+
+        <!-- MID-LEFT: Masa y gravedad -->
+        <div class="sol-panel panel-ml">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Masa</div>
+          <div class="sol-panel-value">1.989 × 10³⁰ kg</div>
+          <div class="sol-panel-sub">99,86% del sistema solar</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-label">Gravedad superficial</div>
+          <div class="sol-panel-value">274 m/s²</div>
+          <div class="sol-panel-sub">28× la gravedad terrestre</div>
+        </div>
+
+        <!-- MID-RIGHT: Distancia y luz -->
+        <div class="sol-panel panel-mr">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Distancia a la Tierra</div>
+          <div class="sol-panel-value">149.600.000 km</div>
+          <div class="sol-panel-sub">1 Unidad Astronómica (UA)</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-label">Tiempo de la luz</div>
+          <div class="sol-panel-value">8 min 20 seg</div>
+          <div class="sol-panel-sub">Tierra → Sol a 299.792 km/s</div>
+        </div>
+
+        <!-- BOTTOM-LEFT: Rotación y edad -->
+        <div class="sol-panel panel-bl">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Período de rotación</div>
+          <div class="sol-panel-value">25–36 días</div>
+          <div class="sol-panel-sub">Rotación diferencial</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-label">Edad</div>
+          <div class="sol-panel-value">4.600 M años</div>
+          <div class="sol-panel-sub">Vida restante ~5.000 M años</div>
+        </div>
+
+        <!-- BOTTOM-RIGHT: Composición -->
+        <div class="sol-panel panel-br">
+          <div class="connector"></div>
+          <div class="sol-panel-label">Composición</div>
+          <div class="sol-panel-value">Hidrógeno 73%</div>
+          <div class="sol-panel-sub">Principal componente</div>
+          <div class="panel-divider"></div>
+          <div class="sol-panel-value">Helio 25%</div>
+          <div class="sol-panel-sub">+ trazas de O, C, Ne, Fe</div>
+        </div>
+      </div>
     </main>
 
     <!-- FOOTER -->
@@ -60,14 +140,14 @@
         <div class="footer-planets">
           <span class="footer-label">PLANETAS</span>
           <div class="footer-planet-list">
-            <span><a href="#contenido-mercurio">Mercurio</a></span>
-            <span><a href="#contenido-venus">Venus</a></span>
-            <span><a href="#contenido-tierra">La Tierra</a></span>
-            <span><a href="#contenido-marte">Marte</a></span>
-            <span><a href="#contenido-jupiter">Júpiter</a></span>
-            <span><a href="#contenido-saturno">Saturno</a></span>
-            <span><a href="#contenido-urano">Urano</a></span>
-            <span><a href="#contenido-neptuno">Neptuno</a></span>
+            <span><a href="./index.html#contenido-mercurio">Mercurio</a></span>
+            <span><a href="./index.html#contenido-venus">Venus</a></span>
+            <span><a href="./index.html#contenido-tierra">La Tierra</a></span>
+            <span><a href="./index.html#contenido-marte">Marte</a></span>
+            <span><a href="./index.html#contenido-jupiter">Júpiter</a></span>
+            <span><a href="./index.html#contenido-saturno">Saturno</a></span>
+            <span><a href="./index.html#contenido-urano">Urano</a></span>
+            <span><a href="./index.html#contenido-neptuno">Neptuno</a></span>
           </div>
         </div>
         <div class="footer-divider"></div>

@@ -402,3 +402,24 @@ a:hover::after {
   display: block;
   height: 100%;
 }
+
+#div-sol {
+  scale: 4;
+  position: absolute;
+  width: 40vh;
+
+  overflow: hidden;
+  translate: 210% -160%;
+  z-index: 3;
+}
+#imagen-sol {
+  transform: scale(1.13);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#imagen-sol:hover {
+  transform: translateY(20px);
+  transition: 1s;
+  cursor: pointer;
+}

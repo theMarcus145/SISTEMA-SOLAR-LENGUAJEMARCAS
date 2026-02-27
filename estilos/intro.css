@@ -19,6 +19,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeUp 1.2s ease 0.2s both;
+  z-index:;
 }
 
 #intro p {
