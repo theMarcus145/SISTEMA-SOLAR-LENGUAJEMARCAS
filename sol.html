@@ -14,14 +14,15 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-    <script src="./scripts/scripts.js"></script>
   </head>
   <body>
     <!-- NAV -->
     <nav id="navegacion" class="visible">
       <ul id="menu">
         <li>
-          <button onclick="window.location.href = '#intro'">INICIO</button>
+          <button onclick="window.location.href = './index.html'">
+            INICIO
+          </button>
         </li>
         <li>
           <button onclick="window.location.href = './galeria.html'">
@@ -33,14 +34,18 @@
             CONTACTO
           </button>
         </li>
-        <li><button onclick="window.location.href = ''">BOTON 4</button></li>
+        <li>
+          <button onclick="window.location.href = '#displayContent'">
+            EL SOL
+          </button>
+        </li>
       </ul>
     </nav>
 
     <!-- CONTENIDO -->
     <main>
       <canvas id="displayContent"> </canvas>
-      <script type="module" src="/scripts/main.js"></script>
+      <script type="module" src="./scripts/main.js"></script>
     </main>
 
     <!-- FOOTER -->

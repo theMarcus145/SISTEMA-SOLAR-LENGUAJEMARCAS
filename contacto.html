@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <!-- SCRIPT PARA CONTROLAR EL SCROLL, MADA MÁS-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROYECTO FINAL</title>
+    <link rel="stylesheet" href="./estilos/estilos.css" />
+    <link rel="stylesheet" href="./estilos/intro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="navegacion" class="visible">
+      <ul id="menu">
+        <li>
+          <button onclick="window.location.href = './index.html'">
+            INICIO
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = './galeria.html'">
+            GALERÍA
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = './contacto.html'">
+            CONTACTO
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = '#displayContent'">
+            EL SOL
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main></main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-top-border"></div>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-title">EL SISTEMA SOLAR</span>
+          <span class="footer-subtitle">Una exploración del cosmos</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-planets">
+          <span class="footer-label">PLANETAS</span>
+          <div class="footer-planet-list">
+            <span><a href="#contenido-mercurio">Mercurio</a></span>
+            <span><a href="#contenido-venus">Venus</a></span>
+            <span><a href="#contenido-tierra">La Tierra</a></span>
+            <span><a href="#contenido-marte">Marte</a></span>
+            <span><a href="#contenido-jupiter">Júpiter</a></span>
+            <span><a href="#contenido-saturno">Saturno</a></span>
+            <span><a href="#contenido-urano">Urano</a></span>
+            <span><a href="#contenido-neptuno">Neptuno</a></span>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-meta">
+          <span class="autor"
+            >Proyecto por <strong>Marco Gil Valero</strong></span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
