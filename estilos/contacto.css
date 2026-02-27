@@ -1,0 +1,209 @@
+/* ══════════════════════════════════════════
+   CONTACTO — El Sistema Solar
+   ══════════════════════════════════════════ */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8vh 4vw;
+  gap: 5vh;
+}
+
+/* ── HEADER ── */
+.contacto-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8vh;
+  animation: fadeUp 1s ease 0.1s both;
+}
+
+.contacto-header h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #cacaca 60%, #7c7c7c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contacto-header p {
+  font-size: clamp(0.5rem, 0.8vw, 0.75rem);
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: rgba(150, 190, 255, 0.5);
+}
+
+/* ── FORMULARIO ── */
+.form-wrapper {
+  width: min(560px, 90vw);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(100, 170, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 5vh 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  animation: fadeUp 1s ease 0.3s both;
+  position: relative;
+}
+
+/* Esquinas decorativas */
+.form-wrapper::before,
+.form-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(100, 170, 255, 0.35);
+  border-style: solid;
+}
+
+.form-wrapper::before {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+
+.form-wrapper::after {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ── GRUPOS ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.form-group label {
+  font-size: clamp(0.45rem, 0.6vw, 0.6rem);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(100, 170, 255, 0.6);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 1.4vh 1vw;
+  font-family: "Michroma", sans-serif;
+  font-size: clamp(0.55rem, 0.7vw, 0.75rem);
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.85);
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.12em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(100, 170, 255, 0.5);
+  background: rgba(100, 170, 255, 0.04);
+  box-shadow: 0 0 18px rgba(100, 170, 255, 0.05);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 14vh;
+  line-height: 1.7;
+}
+
+/* ── SEPARADOR ── */
+.form-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(100, 170, 255, 0.15),
+    transparent
+  );
+}
+
+/* ── BOTÓN ── */
+.btn-submit {
+  align-self: flex-end;
+  background: transparent;
+  border: 1px solid rgba(100, 170, 255, 0.4);
+  padding: 1.4vh 2.5vw;
+  font-family: "Michroma", sans-serif;
+  font-size: clamp(0.5rem, 0.65vw, 0.7rem);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.btn-submit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(100, 170, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-submit:hover {
+  color: rgba(255, 255, 255, 1);
+  border-color: rgba(100, 170, 255, 0.8);
+}
+
+.btn-submit:hover::before {
+  transform: translateX(100%);
+}
+
+/* ── ANIMACIÓN ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

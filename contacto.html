@@ -1,19 +1,18 @@
 <!doctype html>
-<html lang="en">
-  <!-- SCRIPT PARA CONTROLAR EL SCROLL, MADA MÁS-->
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROYECTO FINAL</title>
+    <title>CONTACTO — El Sistema Solar</title>
     <link rel="stylesheet" href="./estilos/estilos.css" />
     <link rel="stylesheet" href="./estilos/intro.css" />
+    <link rel="stylesheet" href="./estilos/contacto.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   </head>
   <body>
     <!-- NAV -->
@@ -35,15 +34,68 @@
           </button>
         </li>
         <li>
-          <button onclick="window.location.href = '#displayContent'">
-            EL SOL
-          </button>
+          <button onclick="window.location.href = './sol.html'">EL SOL</button>
         </li>
       </ul>
     </nav>
 
-    <!-- CONTENIDO -->
-    <main></main>
+    <!-- MAIN -->
+    <main>
+      <div class="contacto-header">
+        <h1>Contacto</h1>
+        <div class="linea"></div>
+        <p>Envíanos un mensaje desde el cosmos</p>
+      </div>
+
+      <form class="form-wrapper" action="#" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Tu nombre"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tu@correo.com"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto</label>
+          <input
+            type="text"
+            id="asunto"
+            name="asunto"
+            placeholder="¿De qué trata tu mensaje?"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+        </div>
+
+        <button class="btn-submit" type="submit">Enviar mensaje</button>
+      </form>
+    </main>
 
     <!-- FOOTER -->
     <footer id="footer">
@@ -57,14 +109,14 @@
         <div class="footer-planets">
           <span class="footer-label">PLANETAS</span>
           <div class="footer-planet-list">
-            <span><a href="#contenido-mercurio">Mercurio</a></span>
-            <span><a href="#contenido-venus">Venus</a></span>
-            <span><a href="#contenido-tierra">La Tierra</a></span>
-            <span><a href="#contenido-marte">Marte</a></span>
-            <span><a href="#contenido-jupiter">Júpiter</a></span>
-            <span><a href="#contenido-saturno">Saturno</a></span>
-            <span><a href="#contenido-urano">Urano</a></span>
-            <span><a href="#contenido-neptuno">Neptuno</a></span>
+            <span><a href="./index.html#contenido-mercurio">Mercurio</a></span>
+            <span><a href="./index.html#contenido-venus">Venus</a></span>
+            <span><a href="./index.html#contenido-tierra">La Tierra</a></span>
+            <span><a href="./index.html#contenido-marte">Marte</a></span>
+            <span><a href="./index.html#contenido-jupiter">Júpiter</a></span>
+            <span><a href="./index.html#contenido-saturno">Saturno</a></span>
+            <span><a href="./index.html#contenido-urano">Urano</a></span>
+            <span><a href="./index.html#contenido-neptuno">Neptuno</a></span>
           </div>
         </div>
         <div class="footer-divider"></div>
