@@ -77,25 +77,25 @@ nav ul li {
   margin: 0;
 }
 
-#contenido-mercurio li{
+#contenido-mercurio li {
   border-color: white;
 }
-#contenido-venus li{
+#contenido-venus li {
   border-color: rgb(248, 230, 178);
 }
-#contenido-tierra li{
+#contenido-tierra li {
   border-color: rgb(62, 235, 100);
 }
-#contenido-marte li{
+#contenido-marte li {
   border-color: rgb(235, 76, 28);
 }
-#contenido-jupiter li{
+#contenido-jupiter li {
   border-color: rgb(201, 91, 12);
 }
-#contenido-saturno li{
+#contenido-saturno li {
   border-color: rgb(238, 219, 165);
 }
-#contenido-neptuno li{
+#contenido-neptuno li {
   border-color: rgb(20, 9, 229);
 }
 nav ul li button {
@@ -394,4 +394,11 @@ a:hover {
 }
 a:hover::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+#displayContent {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: 1000%;
 }

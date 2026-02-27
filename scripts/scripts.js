@@ -1,5 +1,4 @@
 // Scroll
-
 const lenis = new Lenis({
   duration: 0.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -25,4 +24,3 @@ window.addEventListener("scroll", function () {
     elemento.classList.remove("visible");
   }
 });
-//Menú
