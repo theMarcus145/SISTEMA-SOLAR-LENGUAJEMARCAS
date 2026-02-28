@@ -9,36 +9,27 @@
     <link rel="stylesheet" href="./estilos/sol.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <!-- Import map: resuelve "three" y "three/addons" a URLs de CDN -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.183.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.183.1/examples/jsm/"
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- NAV -->
     <nav id="navegacion" class="visible">
       <ul id="menu">
-        <li>
-          <button onclick="window.location.href = './index.html'">
-            INICIO
-          </button>
-        </li>
-        <li>
-          <button onclick="window.location.href = './galeria.html'">
-            GALERÍA
-          </button>
-        </li>
-        <li>
-          <button onclick="window.location.href = './contacto.html'">
-            CONTACTO
-          </button>
-        </li>
-        <li>
-          <button onclick="window.location.href = '#displayContent'">
-            EL SOL
-          </button>
-        </li>
+        <li><button onclick="window.location.href = './index.html'">INICIO</button></li>
+        <li><button onclick="window.location.href = './galeria.html'">GALERÍA</button></li>
+        <li><button onclick="window.location.href = './contacto.html'">CONTACTO</button></li>
+        <li><button onclick="window.location.href = '#displayContent'">EL SOL</button></li>
       </ul>
     </nav>
 
@@ -53,9 +44,8 @@
         <div class="linea-sol"></div>
       </div>
 
-      <!-- PANELES -->
+      <!-- OVERLAY PANELS -->
       <div class="sol-overlay">
-        <!-- ARRIBZ IZQUIERDA: Diámetro -->
         <div class="sol-panel panel-tl">
           <div class="connector"></div>
           <div class="sol-panel-label">Diámetro</div>
@@ -66,8 +56,6 @@
           <div class="sol-panel-value">Enana amarilla</div>
           <div class="sol-panel-sub">Clase G2V</div>
         </div>
-
-        <!-- ARRIBA DERECHA: Temperatura -->
         <div class="sol-panel panel-tr">
           <div class="connector"></div>
           <div class="sol-panel-label">Temperatura superficial</div>
@@ -78,8 +66,6 @@
           <div class="sol-panel-value">15.000.000 °C</div>
           <div class="sol-panel-sub">Fusión nuclear de hidrógeno</div>
         </div>
-
-        <!-- MEDIO-IZQUIERDA: Masa y gravedad -->
         <div class="sol-panel panel-ml">
           <div class="connector"></div>
           <div class="sol-panel-label">Masa</div>
@@ -90,8 +76,6 @@
           <div class="sol-panel-value">274 m/s²</div>
           <div class="sol-panel-sub">28× la gravedad terrestre</div>
         </div>
-
-        <!-- MEDIO DERECHA: Distancia y luz -->
         <div class="sol-panel panel-mr">
           <div class="connector"></div>
           <div class="sol-panel-label">Distancia a la Tierra</div>
@@ -102,8 +86,6 @@
           <div class="sol-panel-value">8 min 20 seg</div>
           <div class="sol-panel-sub">Tierra → Sol a 299.792 km/s</div>
         </div>
-
-        <!-- ABAJO-IZQUIERDA: Rotación y edad -->
         <div class="sol-panel panel-bl">
           <div class="connector"></div>
           <div class="sol-panel-label">Período de rotación</div>
@@ -114,8 +96,6 @@
           <div class="sol-panel-value">4.600 M años</div>
           <div class="sol-panel-sub">Vida restante ~5.000 M años</div>
         </div>
-
-        <!-- ABAJO DERECHA: Composición -->
         <div class="sol-panel panel-br">
           <div class="connector"></div>
           <div class="sol-panel-label">Composición</div>
@@ -152,9 +132,7 @@
         </div>
         <div class="footer-divider"></div>
         <div class="footer-meta">
-          <span class="autor"
-            >Proyecto por <strong>Marco Gil Valero</strong></span
-          >
+          <span class="autor">Proyecto por <strong>Marco Gil Valero</strong></span>
         </div>
       </div>
     </footer>
