@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTACTO — El Sistema Solar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/contacto-D3ezm0Ow.css">
+    <link rel="stylesheet" crossorigin href="/assets/intro-Bi3Curkx.css">
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="navegacion" class="visible">
+      <ul id="menu">
+        <li>
+          <button onclick="window.location.href = './index.html'">
+            INICIO
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = './galeria.html'">
+            GALERÍA
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = './contacto.html'">
+            CONTACTO
+          </button>
+        </li>
+        <li>
+          <button onclick="window.location.href = './sol.html'">EL SOL</button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <div class="contacto-header">
+        <h1>Contacto</h1>
+        <div class="linea"></div>
+        <p>Envíanos un mensaje desde el cosmos</p>
+      </div>
+
+      <form class="form-wrapper" action="#" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Tu nombre"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-MAIL</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tu@correo.com"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto</label>
+          <input
+            type="text"
+            id="asunto"
+            name="asunto"
+            placeholder="¿De qué trata tu mensaje?"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-divider"></div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+        </div>
+
+        <button class="btn-submit" type="submit">Enviar mensaje</button>
+      </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-top-border"></div>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-title">EL SISTEMA SOLAR</span>
+          <span class="footer-subtitle">Una exploración del cosmos</span>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-planets">
+          <span class="footer-label">PLANETAS</span>
+          <div class="footer-planet-list">
+            <span><a href="./index.html#contenido-mercurio">Mercurio</a></span>
+            <span><a href="./index.html#contenido-venus">Venus</a></span>
+            <span><a href="./index.html#contenido-tierra">La Tierra</a></span>
+            <span><a href="./index.html#contenido-marte">Marte</a></span>
+            <span><a href="./index.html#contenido-jupiter">Júpiter</a></span>
+            <span><a href="./index.html#contenido-saturno">Saturno</a></span>
+            <span><a href="./index.html#contenido-urano">Urano</a></span>
+            <span><a href="./index.html#contenido-neptuno">Neptuno</a></span>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-meta">
+          <span class="autor"
+            >Proyecto por <strong>Marco Gil Valero</strong></span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
