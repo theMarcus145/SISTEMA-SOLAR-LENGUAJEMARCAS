@@ -19,7 +19,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeUp 1.2s ease 0.2s both;
-  z-index:;
+  z-index: 1;
 }
 
 #intro p {
@@ -88,5 +88,32 @@
   100% {
     opacity: 0;
     transform: scaleY(1) translateY(10px);
+  }
+}
+
+/*
+  RESPONSIVE
+*/
+@media (max-width: 900px) {
+  #intro h1 {
+    letter-spacing: 0.25em;
+  }
+  #intro p {
+    letter-spacing: 0.3em;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+  }
+}
+
+@media (max-width: 600px) {
+  #intro h1 {
+    font-size: clamp(1.8rem, 10vw, 3.5rem);
+    letter-spacing: 0.15em;
+  }
+  #intro p {
+    letter-spacing: 0.2em;
+    font-size: 0.65rem;
+  }
+  #intro .linea {
+    width: 60vw;
   }
 }

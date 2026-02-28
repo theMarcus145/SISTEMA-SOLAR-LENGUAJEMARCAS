@@ -1,9 +1,10 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
+//CREAR ESCENA
 const scene = new THREE.Scene();
 
-//CÁMARA
+// CÁMARA
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -11,14 +12,23 @@ const camera = new THREE.PerspectiveCamera(
   1000,
 );
 
+// CONTROLADOR PARA EL RESIZE DE LA VENTANA
 window.addEventListener("resize", () => {
-  camera.aspect = getCameraAspect();
+  const width  = window.innerWidth;
+  const height = window.innerHeight;
+
+  camera.aspect = width / height;
   camera.updateProjectionMatrix();
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
 });
 
+//CREAR EL RENDERER DONDE SE VAN A COLOCAR EL SOL
 const canvas = document.querySelector("#displayContent");
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
 
 // MODELO 3D
@@ -51,7 +61,7 @@ loader.load(
       return new THREE.CanvasTexture(canvas);
     }
 
-    // AÑADIR EL BRILLO
+    // CREAR EL BRILLO
     const glowMaterial = new THREE.SpriteMaterial({
       map: crearTexturaGlow(),
       transparent: true,
@@ -59,9 +69,9 @@ loader.load(
       depthWrite: false,
     });
 
-    // AÑADE EL BRILLO AL RENDERER
+    // AÑADIR EL BRILLO
     const glow = new THREE.Sprite(glowMaterial);
-    glow.scale.set(40, 40, 1); // TAMAÑO DEL GLOWMATERIAL
+    glow.scale.set(40, 40, 1);
     scene.add(glow);
   },
   (xhr) => {
@@ -72,9 +82,11 @@ loader.load(
   },
 );
 
+//CREAR Y POSICIONAR CÁMARA
 camera.position.set(0, 4, 20);
 camera.lookAt(0, 0, 0);
 
+//FUNCION DE ANIMAR, HACER QUE ROTE EL SOL
 function animate(time) {
   if (model) {
     model.rotation.y = time / 14000;

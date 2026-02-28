@@ -52,7 +52,7 @@
 }
 
 .section-label span {
-  font-size: 0.6vw;
+  font-size: clamp(0.45rem, 0.6vw, 0.65rem);
   letter-spacing: 0.6em;
   color: rgba(100, 160, 255, 0.5);
   text-transform: uppercase;
@@ -67,10 +67,7 @@
 }
 
 /* ══════════════════════════════════════════
-   GRID PRINCIPAL
-   - 8 columnas
-   - row-height = (100vw - 6vw padding - gaps) / 8
-     → usamos aspect-ratio para los cuadrados
+   GRID PRINCIPAL — 8 columnas desktop
    ══════════════════════════════════════════ */
 #galeria-grid {
   position: relative;
@@ -129,7 +126,7 @@
 }
 
 .overlay-tag {
-  font-size: 0.55vw;
+  font-size: clamp(0.4rem, 0.55vw, 0.6rem);
   letter-spacing: 0.4em;
   color: rgba(120, 180, 255, 0.8);
   text-transform: uppercase;
@@ -137,13 +134,12 @@
 }
 
 .overlay-title {
-  font-size: 0.9vw;
+  font-size: clamp(0.6rem, 0.9vw, 1rem);
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
 }
 
-/* Borde sutil en hover */
 .grid-item::before {
   content: "";
   position: absolute;
@@ -158,46 +154,12 @@
   border-color: rgba(100, 170, 255, 0.3);
 }
 
-/* ══════════════════════════════════════════
-   CUADRADOS — planetas y lunas
-   aspect-ratio: 1 / 1 → cada celda se
-   autoajusta en altura para ser cuadrada.
-   Ocupan 2 cols × auto height
-   ══════════════════════════════════════════ */
-.cuadrado {
-  grid-column: span 2;
-  aspect-ratio: 1 / 1;
-}
-
-/* ══════════════════════════════════════════
-   RECTANGULARES — nebulosas, galaxias,
-   cometas, sistema solar, punto azul…
-   Varios formatos según protagonismo
-   ══════════════════════════════════════════ */
-
-/* Ancho completo (8 cols), altura panorámica */
-.rect-wide {
-  grid-column: span 8;
-  aspect-ratio: 16 / 5;
-}
-
-/* Mitad del ancho (4 cols), 16:9 */
-.rect-half {
-  grid-column: span 4;
-  aspect-ratio: 16 / 9;
-}
-
-/* Un tercio (3 cols aprox → usamos span 3), 4:3 */
-.rect-third {
-  grid-column: span 3;
-  aspect-ratio: 4 / 3;
-}
-
-/* Span 2, más vertical para llenar huecos */
-.rect-tall {
-  grid-column: span 2;
-  aspect-ratio: 2 / 3;
-}
+/* ── FORMATOS ── */
+.cuadrado   { grid-column: span 2; aspect-ratio: 1 / 1; }
+.rect-wide  { grid-column: span 8; aspect-ratio: 16 / 5; }
+.rect-half  { grid-column: span 4; aspect-ratio: 16 / 9; }
+.rect-third { grid-column: span 3; aspect-ratio: 4 / 3; }
+.rect-tall  { grid-column: span 2; aspect-ratio: 2 / 3; }
 
 /* ── ANIMACIONES ESCALONADAS ── */
 .grid-item:nth-child(1)  { animation-delay: 0.05s; }
@@ -226,12 +188,78 @@
 
 /* ── KEYFRAMES ── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 
+   RESPONSIVE (≤ 900px)
+   Grid pasa a 4 columnas
+ */
+@media (max-width: 900px) {
+  #galeria-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 2vw 5vh;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .cuadrado   { grid-column: span 2; }
+  .rect-wide  { grid-column: span 4; aspect-ratio: 16 / 7; }
+  .rect-half  { grid-column: span 4; }
+  .rect-third { grid-column: span 2; aspect-ratio: 1 / 1; }
+  .rect-tall  { grid-column: span 2; }
+
+  #intro-galeria h1 {
+    letter-spacing: 0.25em;
   }
+  #intro-galeria p {
+    letter-spacing: 0.3em;
+  }
+
+  .overlay-tag   { font-size: 0.5rem; letter-spacing: 0.25em; }
+  .overlay-title { font-size: 0.7rem; letter-spacing: 0.15em; }
+}
+
+/*
+   RESPONSIVE — Móvil (≤ 550px)
+   Grid pasa a 2 columnas
+ */
+@media (max-width: 550px) {
+  #intro-galeria {
+    height: 40vh;
+  }
+  #intro-galeria h1 {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+    letter-spacing: 0.15em;
+  }
+  #intro-galeria p {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
+  #intro-galeria .linea {
+    width: 50vw;
+  }
+
+  .section-label {
+    padding: 3vh 4vw 1.5vh;
+  }
+  .section-label span {
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  #galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding: 0 1vw 4vh;
+  }
+
+  /* En 2 columnas todos ocupan 1 col o 2 col (ancho completo) */
+  .cuadrado   { grid-column: span 1; }
+  .rect-wide  { grid-column: span 2; aspect-ratio: 16 / 8; }
+  .rect-half  { grid-column: span 2; aspect-ratio: 16 / 9; }
+  .rect-third { grid-column: span 1; aspect-ratio: 1 / 1; }
+  .rect-tall  { grid-column: span 1; }
+
+  .overlay-tag   { font-size: 0.4rem; letter-spacing: 0.15em; }
+  .overlay-title { font-size: 0.6rem; letter-spacing: 0.1em; }
 }
