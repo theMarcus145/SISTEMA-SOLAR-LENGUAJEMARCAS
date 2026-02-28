@@ -1,9 +1,6 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-
+// Three.js cargado como global desde CDN (ver sol.html)
 const scene = new THREE.Scene();
 
-// CÁMARA
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -11,13 +8,10 @@ const camera = new THREE.PerspectiveCamera(
   1000,
 );
 
-// RESIZE DE LA VENTANA
 window.addEventListener("resize", () => {
-  const width  = window.innerWidth;
-  const height = window.innerHeight;
-  camera.aspect = width / height;
+  camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 });
 
@@ -28,7 +22,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
 
 let model = null;
-const loader = new GLTFLoader();
+const loader = new THREE.GLTFLoader();
 loader.load(
   "/sun2.glb",
   (glb) => {
