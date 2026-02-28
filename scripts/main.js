@@ -1,7 +1,6 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import * as THREE from "https://unpkg.com/three@0.183.1/build/three.module.js";
+import { GLTFLoader } from "https://unpkg.com/three@0.183.1/examples/jsm/loaders/GLTFLoader.js";
 
-//CREAR ESCENA
 const scene = new THREE.Scene();
 
 // CÁMARA
@@ -12,7 +11,7 @@ const camera = new THREE.PerspectiveCamera(
   1000,
 );
 
-// CONTROLADOR PARA EL RESIZE DE LA VENTANA
+// RESIZE DE LA VENTANA
 window.addEventListener("resize", () => {
   const width  = window.innerWidth;
   const height = window.innerHeight;
@@ -24,7 +23,6 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(window.devicePixelRatio);
 });
 
-//CREAR EL RENDERER DONDE SE VAN A COLOCAR EL SOL
 const canvas = document.querySelector("#displayContent");
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -43,7 +41,6 @@ loader.load(
     model.scale.set(0.34, 0.34, 0.34);
     scene.add(model);
 
-    // FUNCIÓN PARA CREAR LA TEXTURA DE BRILLO
     function crearTexturaGlow() {
       const canvas = document.createElement("canvas");
       canvas.width = 256;
@@ -61,7 +58,6 @@ loader.load(
       return new THREE.CanvasTexture(canvas);
     }
 
-    // CREAR EL BRILLO
     const glowMaterial = new THREE.SpriteMaterial({
       map: crearTexturaGlow(),
       transparent: true,
@@ -69,7 +65,6 @@ loader.load(
       depthWrite: false,
     });
 
-    // AÑADIR EL BRILLO
     const glow = new THREE.Sprite(glowMaterial);
     glow.scale.set(40, 40, 1);
     scene.add(glow);
@@ -82,11 +77,9 @@ loader.load(
   },
 );
 
-//CREAR Y POSICIONAR CÁMARA
 camera.position.set(0, 4, 20);
 camera.lookAt(0, 0, 0);
 
-//FUNCION DE ANIMAR, HACER QUE ROTE EL SOL
 function animate(time) {
   if (model) {
     model.rotation.y = time / 14000;
